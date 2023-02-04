@@ -1,102 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
+
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>kazu107 WebSite</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
     <style>
-      canvas {
-        border: 1px solid black;
-      }
+        body {
+            padding-top: 50px;
+            background-color: #F0FFF0;
+        }
+        .starter-template {
+            padding: 40px 15px;
+            background-color: white;
+        }
     </style>
 </head>
-<body onload="startGame()">
-<script>
-      const canvas = document.createElement("canvas");
-      const ctx = canvas.getContext("2d");
-      canvas.width = 480;
-      canvas.height = 320;
-      document.body.appendChild(canvas);
 
-      let x = canvas.width / 2;
-      let y = canvas.height - 30;
-      let dx = 2;
-      let dy = -2;
-      let ballRadius = 10;
-      let paddleHeight = 10;
-      let paddleWidth = 75;
-      let paddleX = (canvas.width - paddleWidth) / 2;
-      let rightPressed = false;
-      let leftPressed = false;
-
-      document.addEventListener("keydown", keyDownHandler, false);
-      document.addEventListener("keyup", keyUpHandler, false);
-
-      function keyDownHandler(e) {
-        if(e.key == "Right" || e.key == "ArrowRight") {
-          rightPressed = true;
-        }
-        else if(e.key == "Left" || e.key == "ArrowLeft") {
-          leftPressed = true;
-        }
-      }
-
-      function keyUpHandler(e) {
-        if(e.key == "Right" || e.key == "ArrowRight") {
-          rightPressed = false;
-        }
-        else if(e.key == "Left" || e.key == "ArrowLeft") {
-          leftPressed = false;
-        }
-      }
-
-      function drawBall() {
-        ctx.beginPath();
-        ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-        ctx.fillStyle = "#0095DD";
-        ctx.fill();
-        ctx.closePath();
-      }
-
-      function drawPaddle() {
-        ctx.beginPath();
-        ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
-        ctx.fillStyle = "#0095DD";
-        ctx.fill();
-        ctx.closePath();
-      }
-
-      function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        drawBall();
-        drawPaddle();
-
-        if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
-          dx = -dx;
-        }
-        if(y + dy < ballRadius) {
-          dy = -dy;
-        } else if(y + dy > canvas.height-ballRadius) {
-          if(x > paddleX && x < paddleX + paddleWidth) {
-            dy = -dy;
-          } else {
-            alert("GAME OVER");
-            document.location.reload();
-          }
-        }
-
-        if(rightPressed && paddleX < canvas.width-paddleWidth) {
-          paddleX += 7;
-        }
-        else if(leftPressed && paddleX > 0) {
-          paddleX -= 7;
-        }
-
-        x += dx;
-        y += dy;
-      }
-
-      function startGame() {
-        setInterval(draw, 10);
-      }
-    </script>
+<body>
+<div class="container">
+    <div class="starter-template">
+        <h1>吾輩は猫である。</h1>
+        <p class="lead">名前はまだない。</p>
+        <p>どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。</p>
+        <a class="btn btn-primary" href="#">OK</a>
+    </div>
+</div>
 </body>
-</html>
 
+</html>
