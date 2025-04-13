@@ -23,7 +23,7 @@
 
 /* 下部のコンテンツがヘッダーに隠れないよう、余白を追加 */
 .container .slide {
-    margin-top: 200px;  /* ヘッダーの高さ分の余白 */
+    margin-top: 200px;
 }
 
 
