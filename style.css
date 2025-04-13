@@ -1,17 +1,18 @@
 /* 全体の横幅を固定（ここでは1920pxに合わせています） */
 .container {
+    width: 1280px;
     margin: 0 auto;
-    width: 1920px;
+    overflow: hidden; /* はみ出し防止 */
 }
 
-/* ヘッダーを固定 */
+/* ヘッダー（既に固定済みの例） */
 .page-header {
     position: fixed;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
     height: 200px;
-    width: 1920px; /* コンテナと合わせる */
+    width: 1280px;  /* 1920pxから変更 */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -22,8 +23,12 @@
 }
 
 /* 下部のコンテンツがヘッダーに隠れないよう、余白を追加 */
-.container .slide {
-    margin-top: 200px;
+.slide {
+    /* もともと1920px前提のデザインの場合 */
+    transform: scale(0.66667);
+    transform-origin: top left;
+    width: 1920px;  /* 元サイズ */
+    height: 4486px; /* 元サイズ（高さはそのままの比率で縮小） */
 }
 
 
