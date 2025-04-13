@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // 切替対象の画像リスト（実際の画像パスに置換してください）
+        const images = [
+            "img/slide1.png",
+            "img/slide2.png",
+            "img/slide3.png",
+            "img/slide4.png",
+            "img/slide5.png",
+            "img/slide6.png",
+        ];
+        let currentIndex = 0;
+        const frame = document.querySelector('.frame-2');
+        const width = frame.clientWidth; // 1467px（.frame-2 の幅）
+        let slideInterval;
+
+        // 画像の左右スライドでの切替用関数
+        function slideTransition(newIndex, direction) {
+            const currentImg = frame.querySelector('img.active');
+            // 新しい画像要素を生成
+            const newImg = document.createElement('img');
+            newImg.src = images[newIndex];
+            newImg.alt = "slide image";
+            newImg.style.position = 'absolute';
+            newImg.style.top = '0';
+            newImg.style.width = '100%';
+            newImg.style.height = '100%';
+            newImg.style.objectFit = 'cover';
+            newImg.style.transition = 'left 0.5s ease';
+
+            // 方向に応じた開始位置（右方向の場合は右外、左方向の場合は左外）を設定
+            if (direction === 'next') {
+                newImg.style.left = width + 'px';
+            } else { // direction === 'prev'
+                newImg.style.left = -width + 'px';
+            }
+            frame.appendChild(newImg);
+
+            // 強制 reflow
+            void newImg.offsetWidth;
+
+            // 両画像の位置をアニメーションで切替
+            currentImg.style.transition = 'left 0.5s ease';
+            if (direction === 'next') {
+                currentImg.style.left = -width + 'px';
+            } else {
+                currentImg.style.left = width + 'px';
+            }
+            newImg.style.left = '0';
+
+            // アニメーション完了後、古い画像を削除＆新しい画像に active クラスを付与
+            newImg.addEventListener('transitionend', function() {
+                frame.removeChild(currentImg);
+                newImg.classList.add('active');
+            }, { once: true });
+
+            currentIndex = newIndex;
+        }
+
+        function startSlideShow() {
+            slideInterval = setInterval(function() {
+                let newIndex = (currentIndex + 1) % images.length;
+                slideTransition(newIndex, 'next');
+            }, 5000);
+        }
+
+        // 右矢印（次の画像）
+        document.querySelector('.right-arrow').addEventListener('click', function() {
+            clearInterval(slideInterval);
+            let newIndex = (currentIndex + 1) % images.length;
+            slideTransition(newIndex, 'next');
+            startSlideShow();
+        });
+
+        // 左矢印（前の画像）
+        document.querySelector('.left-arrow').addEventListener('click', function() {
+            clearInterval(slideInterval);
+            let newIndex = (currentIndex - 1 + images.length) % images.length;
+            slideTransition(newIndex, 'prev');
+            startSlideShow();
+        });
+
+        startSlideShow();
+    });
+</script>
+
+<body>
+<div class="container">
+<header class="page-header">
+    <div class="header-left">
+        <img src="img/logo.png" alt="Site Icon" class="site-icon">
+    </div>
+    <nav class="header-nav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="https://www.instagram.com/hus_metaverse/">Instagram</a></li>
+            <li><a href="#youtube">YouTube</a></li>
+            <li><a href="#onlinemagazin">Online Magazin</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="slide">
+    <div class="group">
+        <div class="text-wrapper">これまでのメタバースプロジェクトと今後の展望。</div>
+        <div class="div">-Journey-</div>
+        <div class="element">
+            これまでに私たちは、遠方の方でも気軽に参加できるよう北海道科学大学の校舎を仮想空間に再現してきました。当初は「実際のキャンパス体験に比べリアルさに欠ける」との声もありましたが、細部の再現性を高め、付加価値を加えることで、よりリアルな体験を提供できるよう努めました。<br />また、少人数での3Dモデル制作や技術実装は大きな課題でしたが、チームで協力し乗り越えてきました。今後は、進学を考える高校生の皆さんにとって役立つコンテンツを提供し、大学選びの手助けができるよう尽力していきます。
+        </div>
+        <img class="img" src="img/1.png" />
+    </div>
+    <div class="overlap">
+        <div class="rectangle"></div>
+        <div class="text-wrapper-2">contact</div>
+        <div class="overlap-wrapper">
+            <a href="https://www.instagram.com/hus_metaverse/" class="contact-link">
+                <div class="overlap-group">
+                    <div class="text-wrapper-3">お問い合わせはこちらから</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="text-wrapper-4">
+            本プロジェクトに関わること、また何かご相談やご連絡、大学内でのお誘いがございましたら。気軽にこちらへご連絡ください、お問い合わせお待ちしております。
+        </div>
+    </div>
+    <img class="element-2" src="img/2.png" />
+    <img class="line" src="img/line-1.svg" />
+    <div class="group-2">
+        <div class="text-wrapper-5">誰もが、どこにいても、いつでも、知ることのできる大学</div>
+        <div class="text-wrapper-6">-Futura-</div>
+        <div class="NET-OK">
+            「メタバースプロジェクト」は、当初オンライン授業の利便性向上を目標としていましたが、ポストコロナ時代における需要減少を受け、「仮想空間でのオープンキャンパス体験の提供」へと方針を変更しました。現在はオープンキャンパスやNETオープンキャンパスに参加し、高校生への体験機会を提供しています。今後は動画配信などを通じて構築プロセスを公開し、北海道科学大学の認知度向上を目指します。<br />本プロジェクトでは、多くの学生の参加を歓迎します。「ガクチカを作りたい」「仮想空間構築に興味がある」「冊子を作りたい」「プレゼン技術を向上させたい」などの理由でもOK。<br />新たなスキルを学び、充実した大学生活を送りませんか？
+        </div>
+        <img class="afbb-bc-ca" src="img/a556fb8b-8b2c-40ca-b3f7-388db1c321c1-1.png" />
+    </div>
+    <div class="group-3">
+        <div class="overlap-group-2">
+            <div class="text-wrapper-5">プロジェクトを支える３つの部門</div>
+            <div class="text-wrapper-7">-Dept-</div>
+        </div>
+        <p class="element-g">
+            <span class="span">私たちのプロジェクトには、主に</span>
+            <span class="text-wrapper-8">「企画部」「制作部」「広報部」</span>
+            <span class="span">の3 つの部署 があります。それぞれの部署が多様な活動を行っています。<br /> </span>
+            <span class="text-wrapper-8">「企画部」</span>
+            <span class="span"
+            >では、新しい課題の設定や今後の配信活動の準備を担当してい
+            ます。また、この冊子のような印刷物の制作も行っており、プロジェクトの全体的なプランニングをリードしています。
+            <br
+            /></span>
+            <span class="text-wrapper-8">「制作部」</span>
+            <span class="span"
+            >では、G 棟の3D モデルの作成など、さまざまなモノづくりに 取り組んでいます。特に3D
+            空間の構築はプロジェクトの基盤となる重要な作 業であり、この部門の中心的な活動です。<br />
+          </span>
+            <span class="text-wrapper-8">「広報部」</span>
+            <span class="span"
+            >では、プロジェクトの活動内容を広く発信し、さまざまな場
+            面で報告や宣伝を行っています。広報活動に興味がある方は、ぜひこの部署に 参加してみてください。
+            それぞれの部署が独自の役割を果たし、プロジェクトを支えています。</span
+            >
+        </p>
+        <img class="dsc" src="img/dsc01629-1.png" />
+    </div>
+    <p class="p">Copyright © Hokkaido University of Science Metaverse project All rights reserved.</p>
+    <a href="https://twitter.com/your-twitter" target="_blank">
+        <div class="text-wrapper-9">X/Twitter</div>
+    </a>
+    <a href="https://note.com/your-note" target="_blank">
+        <div class="text-wrapper-10">note</div>
+    </a>
+    <a href="https://www.youtube.com/your-youtube" target="_blank">
+        <div class="text-wrapper-11">youtube</div>
+    </a>
+    <a href="https://www.instagram.com/your-instagram" target="_blank">
+        <div class="text-wrapper-12">Instagram</div>
+    </a>
+
+    <div class="frame">
+        <div class="overlap-2">
+            <p class="text-wrapper-13">Photos taken during the activity.</p>
+            <div class="frame-2-wrapper">
+                <div class="arrow left-arrow">&#9664;</div>
+                <div class="frame-2">
+                    <!-- 最初の画像を active クラス付きで表示 -->
+                    <img src="img/slide1.png" alt="slide image" class="active">
+                </div>
+                <div class="arrow right-arrow">&#9654;</div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

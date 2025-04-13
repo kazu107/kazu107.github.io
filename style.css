@@ -1,0 +1,508 @@
+/* 全体の横幅を固定（ここでは1920pxに合わせています） */
+.container {
+    margin: 0 auto;
+    width: 1920px;
+}
+
+/* ヘッダーを固定 */
+.page-header {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 200px;
+    width: 1920px; /* コンテナと合わせる */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+/* 下部のコンテンツがヘッダーに隠れないよう、余白を追加 */
+.container .slide {
+    margin-top: 200px;  /* ヘッダーの高さ分の余白 */
+}
+
+
+/* 左側：アイコン */
+.header-left .site-icon {
+    height: 100%;
+    max-height: 180px; /* ヘッダー内で余裕を持たせる */
+}
+
+/* 右側：ナビゲーションリンク */
+.header-nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px; /* 適宜調整してください */
+}
+
+
+.slide {
+    position: relative;
+    width: 1920px;
+    height: 4486px;
+    background-color: #ffffff;
+}
+
+.slide .group {
+    position: absolute;
+    width: 1166px;
+    height: 476px;
+    top: 2624px;
+    left: 394px;
+}
+
+.slide .text-wrapper {
+    width: 618px;
+    height: 127px;
+    top: 0;
+    left: 533px;
+    font-family: "Noto Sans JP-Black", Helvetica;
+    font-weight: 900;
+    font-size: 33.6px;
+    text-align: justify;
+    letter-spacing: 5.37px;
+    line-height: 57.4px;
+    position: absolute;
+    color: #000000;
+}
+
+.slide .div {
+    position: absolute;
+    width: 618px;
+    height: 22px;
+    top: 146px;
+    left: 533px;
+    font-family: "DIN 2014-Demi", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 16.8px;
+    text-align: justify;
+    letter-spacing: 2.69px;
+    line-height: 28.7px;
+    white-space: nowrap;
+}
+
+.slide .element {
+    position: absolute;
+    width: 627px;
+    height: 270px;
+    top: 206px;
+    left: 533px;
+    font-family: "Noto Sans JP-Light", Helvetica;
+    font-weight: 300;
+    color: #000000;
+    font-size: 14px;
+    text-align: justify;
+    letter-spacing: 0;
+    line-height: 44.8px;
+}
+
+.slide .img {
+    position: absolute;
+    width: 444px;
+    height: 463px;
+    top: 10px;
+    left: 0;
+    object-fit: cover;
+}
+
+.slide .overlap {
+    position: absolute;
+    width: 1385px;
+    height: 671px;
+    top: 3298px;
+    left: 267px;
+}
+
+.slide .rectangle {
+    position: absolute;
+    width: 1385px;
+    height: 567px;
+    top: 104px;
+    left: 0;
+    background-color: #eff2f7;
+}
+
+.slide .text-wrapper-2 {
+    position: absolute;
+    width: 1143px;
+    height: 169px;
+    top: 0;
+    left: 119px;
+    font-family: "Futura PT-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 115px;
+    text-align: center;
+    letter-spacing: 19.55px;
+    line-height: 196.5px;
+    white-space: nowrap;
+}
+
+.slide .overlap-wrapper {
+    position: absolute;
+    width: 682px;
+    height: 158px;
+    top: 202px;
+    left: 353px;
+}
+
+.slide .overlap-group {
+    position: relative;
+    width: 680px;
+    height: 158px;
+    background-image: url(./img/e1563-1-1.png);
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.slide .text-wrapper-3 {
+    width: 656px;
+    height: 87px;
+    top: 14px;
+    left: 5px;
+    font-family: "Iwata FukuMarugo StdN-B", Helvetica;
+    font-weight: 400;
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    color: #000000;
+}
+
+.slide .text-wrapper-4 {
+    width: 878px;
+    height: 216px;
+    top: 391px;
+    left: 254px;
+    font-family: "Zen Maru Gothic-Medium", Helvetica;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 54.6px;
+    position: absolute;
+    color: #000000;
+}
+
+.slide .element-2 {
+    position: absolute;
+    width: 152px;
+    height: 183px;
+    top: 4032px;
+    left: 291px;
+    object-fit: cover;
+}
+
+.slide .line {
+    position: absolute;
+    width: 1385px;
+    height: 1px;
+    top: 4260px;
+    left: 267px;
+}
+
+.slide .group-2 {
+    position: absolute;
+    width: 1196px;
+    height: 537px;
+    top: 1292px;
+    left: 365px;
+}
+
+.slide .text-wrapper-5 {
+    position: absolute;
+    width: 618px;
+    height: 127px;
+    top: 0;
+    left: 0;
+    font-family: "Noto Sans JP-Black", Helvetica;
+    font-weight: 900;
+    color: #000000;
+    font-size: 33.6px;
+    text-align: justify;
+    letter-spacing: 5.37px;
+    line-height: 57.4px;
+}
+
+.slide .text-wrapper-6 {
+    position: absolute;
+    width: 618px;
+    height: 22px;
+    top: 147px;
+    left: 0;
+    font-family: "DIN 2014-Demi", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 16.8px;
+    text-align: justify;
+    letter-spacing: 2.69px;
+    line-height: 28.7px;
+    white-space: nowrap;
+}
+
+.slide .NET-OK {
+    width: 563px;
+    height: 340px;
+    top: 197px;
+    left: 0;
+    font-weight: 300;
+    font-size: 13.2px;
+    line-height: 42.4px;
+    position: absolute;
+    font-family: "Noto Sans JP-Light", Helvetica;
+    color: #000000;
+    text-align: justify;
+    letter-spacing: 0;
+}
+
+.slide .afbb-bc-ca {
+    position: absolute;
+    width: 526px;
+    height: 501px;
+    top: 7px;
+    left: 664px;
+    object-fit: cover;
+}
+
+.slide .group-3 {
+    position: absolute;
+    width: 1196px;
+    height: 528px;
+    top: 1959px;
+    left: 365px;
+}
+
+.slide .overlap-group-2 {
+    position: absolute;
+    width: 618px;
+    height: 133px;
+    top: 0;
+    left: 563px;
+}
+
+.slide .text-wrapper-7 {
+    position: absolute;
+    width: 618px;
+    height: 22px;
+    top: 111px;
+    left: 0;
+    font-family: "DIN 2014-Demi", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 16.8px;
+    text-align: justify;
+    letter-spacing: 2.69px;
+    line-height: 28.7px;
+    white-space: nowrap;
+}
+
+.slide .element-g {
+    width: 627px;
+    height: 351px;
+    top: 177px;
+    left: 563px;
+    font-weight: 400;
+    font-size: 12.3px;
+    line-height: 39.4px;
+    position: absolute;
+    font-family: "Noto Sans JP-Light", Helvetica;
+    color: #000000;
+    text-align: justify;
+    letter-spacing: 0;
+}
+
+.slide .span {
+    font-weight: 300;
+}
+
+.slide .text-wrapper-8 {
+    font-family: "Noto Sans JP-Black", Helvetica;
+    font-weight: 900;
+}
+
+.slide .dsc {
+    position: absolute;
+    width: 474px;
+    height: 469px;
+    top: 51px;
+    left: 0;
+    object-fit: cover;
+}
+
+.slide .p {
+    position: absolute;
+    width: 517px;
+    height: 32px;
+    top: 4323px;
+    left: 267px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 12px;
+    text-align: justify;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.slide .text-wrapper-9 {
+    position: absolute;
+    width: 95px;
+    height: 47px;
+    top: 4171px;
+    left: 1347px;
+    font-family: "DIN 2014-Demi", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 16.8px;
+    text-align: center;
+    letter-spacing: 2.69px;
+    line-height: 28.7px;
+}
+
+.slide .text-wrapper-10 {
+    position: absolute;
+    width: 56px;
+    height: 47px;
+    top: 4171px;
+    left: 1272px;
+    font-family: "DIN 2014-Demi", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 16.8px;
+    text-align: center;
+    letter-spacing: 2.69px;
+    line-height: 28.7px;
+}
+
+.slide .text-wrapper-11 {
+    position: absolute;
+    width: 77px;
+    height: 47px;
+    top: 4171px;
+    left: 1575px;
+    font-family: "DIN 2014-Demi", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 16.8px;
+    text-align: center;
+    letter-spacing: 2.69px;
+    line-height: 28.7px;
+}
+
+.slide .text-wrapper-12 {
+    position: absolute;
+    width: 95px;
+    height: 47px;
+    top: 4171px;
+    left: 1461px;
+    font-family: "DIN 2014-Demi", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 16.8px;
+    text-align: center;
+    letter-spacing: 2.69px;
+    line-height: 28.7px;
+}
+
+.slide .frame {
+    width: 1920px;
+    height: 1292px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slide .overlap-2 {
+    position: relative;
+    width: 1467px;
+    height: 858px;
+    top: 238px;
+    left: 227px;
+}
+
+.slide .text-wrapper-13 {
+    position: absolute;
+    width: 352px;
+    height: 34px;
+    top: 824px;
+    left: 4px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.slide .frame-2 {
+    width: 1467px;
+    height: 825px;
+    background-image: url(img/slide1.png);
+    background-size: cover;
+    background-position: 50% 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/* フレームラッパー：相対配置にして矢印を重ねる */
+.frame-2-wrapper {
+    position: relative;
+    height: 825px;  /* .frame-2 の高さに合わせる */
+}
+
+/* .frame-2の基本スタイル（既存コードを踏襲） */
+.frame-2 {
+    position: relative;
+    width: 1467px;
+    height: 825px;
+    overflow: hidden;
+}
+
+/* フレーム内の画像：初期位置は左上、アニメーション用に transition を設定 */
+.frame-2 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: left 0.5s ease;
+}
+
+/* 矢印ボタン：上下中央に配置 */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 36px;
+    color: #ccc;  /* 薄いグレー */
+    background-color: transparent;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100;
+    user-select: none;
+}
+
+/* 左右の位置指定 */
+.left-arrow {
+    left: 20px;  /* 必要に応じて調整 */
+}
+
+.right-arrow {
+    right: 20px; /* 必要に応じて調整 */
+}
