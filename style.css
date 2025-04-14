@@ -22,16 +22,6 @@
     z-index: 1000;
 }
 
-/* 下部のコンテンツがヘッダーに隠れないよう、余白を追加 */
-.slide {
-    /* もともと1920px前提のデザインの場合 */
-    transform: scale(0.66667);
-    transform-origin: top left;
-    width: 1920px;  /* 元サイズ */
-    height: 4486px; /* 元サイズ（高さはそのままの比率で縮小） */
-}
-
-
 /* 左側：アイコン */
 .header-left .site-icon {
     height: 100%;
@@ -53,12 +43,13 @@
     font-size: 18px; /* 適宜調整してください */
 }
 
-
+/* 下部のコンテンツがヘッダーに隠れないよう、余白を追加 */
 .slide {
-    position: relative;
-    width: 1920px;
-    height: 4486px;
-    background-color: #ffffff;
+    /* もともと1920px前提のデザインの場合 */
+    transform: scale(0.66667);
+    transform-origin: top left;
+    width: 1920px;  /* 元サイズ */
+    height: 4486px; /* 元サイズ（高さはそのままの比率で縮小） */
 }
 
 .slide .group {
